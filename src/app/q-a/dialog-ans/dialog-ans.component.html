@@ -1,0 +1,23 @@
+<h2 mat-dialog-title>
+    <div style="text-align: center;">ตอบคำถาม</div>
+    
+</h2>
+<form (ngSubmit)="onSubmit(ansForm)" #ansForm="ngForm" novalidate>
+<mat-dialog-content style="width: 800px;height: 260px;">
+    <div class="row head-topic" >เรื่อง :</div>
+    <div class="row head-topic">{{subject}}</div>
+    
+    <div class="row head-topic">รายละเอียด :</div>
+    <div class="row head-topic">{{question}}</div>
+    
+    <div class="row head-topic">ตอบคำถาม :</div>
+    <div class="row head-topic">
+        <textarea class="box-texts" matInput placeholder="ตอบคำถาม" rows="5" ngModel name="ans" id="ans"></textarea>
+        <!-- <angular-editor  rows="5"></angular-editor> -->
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button type="submit" [disabled]="!ansForm.valid" mat-button>Send</button>
+</mat-dialog-actions>
+</form>

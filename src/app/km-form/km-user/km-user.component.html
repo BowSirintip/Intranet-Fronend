@@ -1,0 +1,82 @@
+<div class="row">
+  <div class="container-fluid">
+    <mat-card class="p-5 ">
+      <div class="btn-icon-clipboard">
+        <div class="bg-head-label">KM</div>
+        <div class="search-div" style="margin-right: 5%;margin-top: 2%;text-align: right;">
+          
+          <mat-form-field class="search-form-field">
+            <input matInput [(ngModel)]="searchKey" placeholder="Search" autocomplete="off" (keyup)="applyFilter()">
+            <button mat-button matSuffix mat-icon-button *ngIf="searchKey == null">
+              <mat-icon>search</mat-icon>
+            </button>
+            <button mat-button matSuffix mat-icon-button aria-label="Clear" *ngIf="searchKey" (click)="onSearchClear()">
+              <mat-icon>close</mat-icon>
+            </button>
+          </mat-form-field>
+        </div>
+        <div class="mat-elevation-z8" style="margin: 0% 5% 5% 5%;">
+          <mat-table [dataSource]="data" matSort>
+            <ng-container matColumnDef="no">
+              <mat-header-cell  style="justify-content: center;" *matHeaderCellDef mat-sort-header> ลำดับ </mat-header-cell>
+              <mat-cell *matCellDef='let in of data ;let i = index'>{{i+1}}</mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="title">
+              <mat-header-cell style="justify-content: center;" *matHeaderCellDef mat-sort-header="subject"> เรื่อง </mat-header-cell>
+              <mat-cell style="justify-content: center;" *matCellDef="let element"> {{element.subject}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="questions">
+              <mat-header-cell style="justify-content: center;" *matHeaderCellDef mat-sort-header="detail"> รายละเอียด </mat-header-cell>
+              <mat-cell style="justify-content: center;" *matCellDef="let element"> {{element.detail}}</mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="createBy">
+              <mat-header-cell style="justify-content: center;" *matHeaderCellDef mat-sort-header="nameUser"> ผู้สร้าง </mat-header-cell>
+              <mat-cell style="justify-content: center;" *matCellDef="let element"> {{element.nameUser}}  {{element.surnameUser}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="createDate">
+              <mat-header-cell style="justify-content: center;" *matHeaderCellDef mat-sort-header="create_date"> วันที่สร้าง </mat-header-cell>
+              <mat-cell style="justify-content: center;" *matCellDef="let element"> {{element.create_date | date}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="pdf">
+              <mat-header-cell style="justify-content: center;" *matHeaderCellDef> PDF </mat-header-cell>
+              <mat-cell style="justify-content: center;" *matCellDef="let element"> 
+                <div *ngIf="element.pdfPath != null">
+                  <a href="https://localhost:44335/{{element.pdfPath}}" target="_blank">
+                    <mat-icon style="color: #9c27b0;">download</mat-icon>
+                    <!-- <img style="max-width:100%;width: 50px;border-radius: 5pc;" src="https://image.flaticon.com/icons/png/512/179/179483.png" > -->
+                  </a>
+                </div>
+              </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="video">
+              <mat-header-cell style="justify-content: center;" *matHeaderCellDef> video </mat-header-cell>
+              <mat-cell style="justify-content: center;" *matCellDef="let element">
+                <div *ngIf="element.videoPath != null">
+                  <a href="https://localhost:44335/{{element.videoPath}}" target="_blank">
+                    <mat-icon style="color: #9c27b0;">download</mat-icon>
+                    <!-- <img style="max-width:100%;width: 50px;border-radius: 5pc;" src="https://image.flaticon.com/icons/png/512/3074/3074767.png" > -->
+                  </a>
+                </div>
+              </mat-cell>
+            </ng-container>
+
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+          </mat-table>
+          
+          <mat-paginator [pageSizeOptions]="[5, 10, 20]" [pageSize]="10" showFirstLastButtons></mat-paginator>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+</div>
+
+<!-- <div style="width:1%;"  >
+    <pdf-viewer [src]="pdfSource" [original-size]="true" style="display: block;" ></pdf-viewer>
+</div> -->

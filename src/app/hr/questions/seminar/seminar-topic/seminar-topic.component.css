@@ -1,0 +1,20 @@
+.cdk-overlay-pane{
+    width: 100% !important;
+}
+
+.box-texts{
+    border: 2px solid #cac4c4;
+    border-radius: 3px;
+    padding: 5px;
+}
+
+.box-texts:hover{
+    border: 2px solid #747575;
+}
+
+.head-topic{
+    margin-top: 1%;
+    padding-left: 5%;
+    padding-right: 5%;
+    font-size: 16px;
+}

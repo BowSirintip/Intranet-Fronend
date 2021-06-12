@@ -1,0 +1,17 @@
+
+.h1, h1 {
+    font-size: 2rem;
+    color: #061E93;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 25px;
+}
+
+.u,u{
+    color:#D1000E;
+}
+
+.mat-card{
+    background: #EFE1F1;
+   
+}

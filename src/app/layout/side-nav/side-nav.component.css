@@ -1,0 +1,25 @@
+.mat-list-icon {
+    color: rgba(0, 0, 0, 0.54);
+  }
+  
+  .img-icon.img-icon.img-icon.img-icon.img-icon {
+    border-radius: unset;
+  }
+  
+  .mat-nav-list .mat-list-item:hover {
+    color: #EA0000;
+    background-color: #ffffff;
+  }
+  
+  .mat-nav-list .mat-list-item:focus {
+    color: white;
+    background-color: #7f078f;
+  }
+
+  .color-font{
+    color: white;
+  }
+
+  .color-font:hover{
+    color: #EA0000;
+  }

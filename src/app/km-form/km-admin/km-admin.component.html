@@ -1,0 +1,73 @@
+<div class="row">
+    <div class="container-fluid">
+        <mat-card class="p-5 ">
+            <div class="btn-icon-clipboard">
+                <div class="bg-head-label">KM</div>
+                <div style="margin:5%">
+                    <div class="row">
+
+                    </div>
+                    <div>เรื่อง</div>
+                    <input class="box-border1" ngModel name="head" #head>
+                    <div>รายละเอียด</div>
+                    <textarea class="box-border1" rows="2" ngModel name="shortnew" #shortnew></textarea>
+                    <div class="row">
+                        <div class="col-6" style="height: 150px;">
+                            <div>แนบไฟล์ (.pdf)</div>
+                            <div class="border-upload-file">
+                                <div *ngIf="showPdf == true" class="align-center">
+                                    <mat-progress-spinner style="margin-top: 5%" mode="indeterminate" color="accent" value=100 diameter='70'
+                                        strokeWidth='10'>
+                                    </mat-progress-spinner>
+                                </div>
+                                <div *ngIf="filename != null && showPdf != true" class="border-Files">
+                                    <span class="padding-files">{{filename}}</span>&nbsp;
+                                    <button type="button" class="btn btn-success" (click)="file.click()">change</button>
+                                </div>
+                                <input type="file" #file placeholder="Choose file" (change)="uploadFile(file.files)"
+                                    style="display: none;" accept="application/pdf">
+                                <div *ngIf="showPdf == false">
+                                    <button *ngIf="filename == null" class="btn-select-files" (click)="file.click()">
+                                        <mat-icon aria-hidden="false">upload</mat-icon>
+                                        <br>Select File to Upload
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-6" style="height: 150px;">
+                            <div>แนบไฟล์วิดีโอ (ไม่เกิน 50 MB)</div>
+                            <div class="border-upload-file">
+
+                                <div *ngIf="show == true" class="align-center">
+                                    <!-- <mat-progress-spinner value="70" mode="determinate"></mat-progress-spinner> -->
+                                    <mat-progress-spinner style="margin-top: 5%" mode="indeterminate" color="accent" value=100 diameter='70'
+                                        strokeWidth='10'>
+                                    </mat-progress-spinner>
+                                </div>
+                                <div *ngIf="filename2 != null && show != true" class="border-Files">
+                                    <span class="padding-files">{{filename2}}</span>&nbsp;
+                                    <button type="button" class="btn btn-success"
+                                        (click)="fileVideo.click()">change</button>
+                                </div>
+                                <input type="file" #fileVideo id="fileVideo" placeholder="Choose file"
+                                    (change)="uploadFileVideo(fileVideo.files)" style="display: none;">
+                                <div *ngIf="show == false">
+                                    <button *ngIf="filename2 == null" class="btn-select-files"
+                                        (click)="fileVideo.click()">
+                                        <mat-icon aria-hidden="false">upload</mat-icon>
+                                        <br>Select Video to Upload
+                                    </button>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div style="text-align: -webkit-right;margin-top: 2%;">
+                            <button class="btn-save" mat-button (click)="saveKMFile(head,shortnew)">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </mat-card>
+    </div>
+</div>

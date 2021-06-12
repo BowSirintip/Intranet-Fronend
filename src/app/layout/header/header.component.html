@@ -1,0 +1,31 @@
+<mat-toolbar color="">
+  <div *ngIf="val">
+    <button (click)="onToggle()" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+  <span [routerLink]="['/app']"></span>
+  <span class="flex-fill"></span>
+  <div *ngIf="val">
+    <button mat-button [matMenuTriggerFor]="beforeMenu">
+      <img class="avatar rounded-circle bg-white" src="{{pic}}">
+      {{name}} {{surname}}
+    </button>
+  </div>
+
+
+  <mat-menu #beforeMenu="matMenu">
+    <button mat-menu-item>
+      <mat-icon>account_box</mat-icon>
+      <span>Edit Profile</span>
+    </button>
+    <!-- <button mat-menu-item>
+      <mat-icon>password</mat-icon>
+      <span>Reset Password</span>
+    </button> -->
+    <button (click)="logout()" mat-menu-item>
+      <mat-icon>exit_to_app</mat-icon>
+      <span>logout</span>
+    </button>
+  </mat-menu>
+</mat-toolbar>

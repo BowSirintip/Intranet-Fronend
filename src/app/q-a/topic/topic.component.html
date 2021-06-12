@@ -1,0 +1,36 @@
+
+<h2 mat-dialog-title>
+    <div style="text-align: center;">ตั้งกระทู้ถาม</div>
+    
+</h2>
+<form (ngSubmit)="onSubmit(topicForm)" #topicForm="ngForm" novalidate>
+<mat-dialog-content style="width: 800px;height: 300px;">
+    <div class="row head-topic" >
+        เรื่อง
+    </div>
+    <div class="row head-topic">
+        <input class="box-texts" matInput placeholder="เรื่อง.." ngModel  #topic name="topic" id="topic" 
+        required>
+        <!-- <input  matInput ngModel  name="idUser" id="idUser" value = "{{userID}}" hidden> -->
+    </div>
+    <div class="row head-topic" >
+        ฝ่าย
+    </div>
+    <div class="row head-topic">
+        <select class="box-texts" matNativeControl required ngModel #faction name="faction" id="faction" >
+            <option  *ngFor="let item of value" value="{{item.id}}">{{item.dep_name}}</option>
+        </select>
+    </div>
+    <div class="row head-topic">
+        รายละเอียด
+    </div>
+    <div class="row head-topic">
+        <textarea class="box-texts" matInput placeholder="รายละเอียดเรื่องที่ตั้งกระทู้.." rows="5" ngModel #detail name="detail" id="detail"></textarea>
+        <!-- <angular-editor  rows="5"></angular-editor> -->
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button type="submit" [disabled]="!topicForm.valid" mat-button >Send</button>
+</mat-dialog-actions>
+</form>

@@ -1,0 +1,22 @@
+
+<ng-container *ngIf="val == true">
+    <mat-sidenav-container fullscreen>
+            <mat-sidenav mode="side" #sidenav style="background: #5C0D60;">
+                <app-side-nav></app-side-nav>
+            </mat-sidenav>
+
+        <mat-sidenav-content>
+            <app-header (toggle)="sidenav.toggle()"></app-header>
+            <div class="content-wrapper">
+                <router-outlet>
+                </router-outlet>
+            </div>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</ng-container>
+<ng-container *ngIf="val == false">
+    <div class="dflex-align-center pt-5 align-content-center" >
+        <router-outlet>
+        </router-outlet>
+    </div>
+</ng-container>

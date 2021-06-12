@@ -1,0 +1,135 @@
+
+.h1, h1 {
+    font-size: 2rem;
+    color: #061E93;
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.u,u{
+    color:#D1000E;
+}
+
+.mat-card{
+    background: #EEE1F0;
+    height: auto;
+}
+
+.btn-hr{
+    width: 100%;
+}
+
+.bg-color{
+    width: 130px;
+    padding: 15px;
+    background-color: #A7F3CD;
+    box-shadow: 0px 2px 5px 0px #aeacac;
+}
+
+.line-head{
+    background-color: #A7F3CD;
+}
+
+.sty-font{
+    color: #000000;
+    font-weight: revert;
+    font-size: 18px;
+    text-align: center;
+}
+
+.sty-font:hover{
+    color: #EA0606;
+    font-weight: revert;
+    font-size: 18px;
+    text-align: center;
+}
+
+.btn-icon-clipboard {
+    font-family: inherit;
+    -moz-appearance: none;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.25;
+    display: inline-block;
+    width: 100%;
+    margin: .5rem 0;
+    padding: 0px 0px 24px;
+    cursor: pointer;
+    text-align: left;
+    vertical-align: middle;
+    text-decoration: none;
+    color: #393f49;
+    border: 0;
+    border-radius: 15px;
+    background-color: #fcf4fc;
+    box-shadow: rgb(0 0 0 / 10%) 0 0 0 1px, rgb(0 0 0 / 10%) 0 4px 16px;
+}
+
+.btn-icon-clipboard:hover {
+    background-color: #fff;
+    box-shadow: rgb(0 0 0 / 10%) 0 0 0 1px, #f4433657 0 4px 16px;
+}
+
+.bg-head-label{
+    background: #6A216D;
+    padding: 20px;
+    width: 100%;
+    color: #ffffff;
+    font-size: 20px;
+    border-radius: 14px;
+    text-align: center;
+}
+
+.btn-exit{
+    overflow: hidden;
+    position: absolute;
+    border: none;
+    top: 40px;
+    right: 39px;
+    border-radius: 50%;
+    background: salmon;
+    color: white;
+    font-size: 16px;
+}
+
+p {
+    font-family: Lato;
+  }
+
+  div.polaroid {
+   
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 25px;
+  }
+  
+  div.container-sty {
+    text-align: center;
+    padding: 10px 20px;
+  }
+
+  .btn-createqa{
+    justify-content: flex-end;
+  }
+
+  .btn-set-qa{
+    width: 12%;
+    justify-items: left;
+    margin: 2% 2% 0% 0%;
+    background-color: palegreen;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+
+  .card-color{
+    background: #efefef !important;
+    height: auto !important;
+    box-shadow: 0px 2px 5px 0px #aeacac !important;
+  }
+
+.btn-show{
+    text-align: -webkit-right;
+    margin-right: 5%;
+}

@@ -1,0 +1,23 @@
+<h2 mat-dialog-title>
+    <div style="text-align: center;">ตั้งกระทู้ถาม</div>
+    
+</h2>
+<mat-dialog-content style="width: 800px;">
+    <div class="row head-topic" >
+        เรื่อง
+    </div>
+    <div class="row head-topic">
+        <input class="box-texts" matInput placeholder="เรื่อง..">
+    </div>
+    <div class="row head-topic">
+        รายละเอียด
+    </div>
+    <div class="row head-topic">
+        <textarea class="box-texts" matInput placeholder="รายละเอียดเรื่องที่ตั้งกระทู้.." rows="5"></textarea>
+        <!-- <angular-editor  rows="5"></angular-editor> -->
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-button>Send</button>
+</mat-dialog-actions>
